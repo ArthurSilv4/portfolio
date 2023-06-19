@@ -71,7 +71,7 @@ export default function Home() {
             </h1>
             <div className="col-span-4 col-start-2">
               <p className="h-full w-full indent-8 font-semibold text-white/75 text-xs md:text-sm">
-                TENHO 18 ANOS SOU DESENVOLVEDOR FRONT-END COM 3 MESES DE
+                TENHO 18 ANOS SOU DESENVOLVEDOR FRONT-END COM 1 ANO DE
                 EXPERIENCIA TRABALHANDO COMO FREELANCER.
               </p>
             </div>
