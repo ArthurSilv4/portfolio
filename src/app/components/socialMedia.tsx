@@ -5,13 +5,17 @@ export function SocialMedia() {
   return (
     <>
       <Link href={'https://www.linkedin.com/in/arthur-de-souza-dev/'}>
-        <BsLinkedin size={30} color="" />
+        <BsLinkedin size={30} color="" className=" rounded hover:bg-white/10" />
       </Link>
       <Link href={'https://github.com/ArthurSilv4'} className="mx-4">
-        <BsGithub size={30} color="" />
+        <BsGithub size={30} color="" className=" rounded hover:bg-white/10" />
       </Link>
       <Link href={'Currículo - Arthur De Souza.pdf'}>
-        <BsFillFileTextFill size={30} color="" />
+        <BsFillFileTextFill
+          size={30}
+          color=""
+          className=" rounded hover:bg-white/10"
+        />
       </Link>
     </>
   );

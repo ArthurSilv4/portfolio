@@ -17,13 +17,13 @@ function createProject(array: Project[]) {
       className="h-full w-full flex items-center justify-center "
     >
       <div className="mb-16">
-        <Link href={obj.link} className="h-full w-full ">
+        <Link href={obj.link} className="h-full w-full">
           <Image
             src={obj.image}
             height={0}
             width={0}
             alt={obj.name}
-            className="h-full w-full"
+            className="h-full w-full saturate-[.85] hover:saturate-100"
           />
         </Link>
 
