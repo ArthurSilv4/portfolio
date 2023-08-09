@@ -5,7 +5,7 @@ export function SocialMedia() {
   return (
     <>
       <Link
-        href={'https://www.linkedin.com/in/arthur-de-souza-dev/'}
+        href={'https://www.linkedin.com/in/arthur-souza-dev//'}
         target="_blank"
       >
         <BsLinkedin size={30} color="" className=" rounded hover:bg-white/10" />
