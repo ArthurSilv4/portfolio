@@ -31,7 +31,7 @@ function createProject(array: Project[]) {
           <p className="text-center text-xs font-semibold uppercase text-black/70">
             {obj.client}
           </p>
-          <h1 className="text-center text-lg font-extrabold uppercase">
+          <h1 className=" text-center text-lg font-extrabold uppercase">
             {obj.name}
           </h1>
         </div>
