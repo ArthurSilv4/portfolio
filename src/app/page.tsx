@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { SocialMedia } from './components/socialMedia';
+import { SocialMedia } from '../components/socialMedia';
 
 interface Project {
   name: string;
