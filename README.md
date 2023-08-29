@@ -1,5 +1,5 @@
 # Portfolio
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/ArthurSilv4/Top-Down/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/ArthurSilv4/portfolio/blob/master/LICENSE)
 
 # Sobre o projeto
 
@@ -20,7 +20,10 @@ Você pode acessar o site clicando [Aqui](https://portfolio-arthur-souza.vercel.
 # Clonar repositório
 git clone https://github.com/ArthurSilv4/portfolio
 
-#Localhost
+# Instalar dependências
+npm i
+
+# Localhost
 npm run dev
 ```
 # Autor
