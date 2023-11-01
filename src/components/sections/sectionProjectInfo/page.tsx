@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { MoreInformation } from 'components/more information/page';
 
@@ -9,8 +8,8 @@ export function SectionProjectInfo({ projectsFillter }: any) {
       <div className="min-h-[200px]">
         <Image
           src={projectsFillter.image}
-          height={200}
-          width={200}
+          height={2000}
+          width={2000}
           alt={projectsFillter.name}
           className="w-full h-full"
         />
@@ -20,19 +19,22 @@ export function SectionProjectInfo({ projectsFillter }: any) {
         <h1 className="text-center font-extrabold">{projectsFillter.name}</h1>
         <p className=" text-justify">{projectsFillter.description}</p>
         <div className="mt-5">
-          <MoreInformation url={projectsFillter.link} />
+          <MoreInformation
+            text="Abra o projeto clicando"
+            url={projectsFillter.link}
+          />
         </div>
       </div>
 
       <div className="mt-5">
         <h2 className="text-center font-extrabold">Tecnologias ultilizadas</h2>
-        <div className="h-[150px]">
+        <div className="max-h-[400px] max-w-[400px] m-auto">
           <Image
             src={projectsFillter.imageTec}
-            width={200}
-            height={200}
+            width={2000}
+            height={2000}
             alt={projectsFillter.name}
-            className="w-full h-full"
+            className="w-full h-full bg-cover bg-center "
           />
         </div>
       </div>

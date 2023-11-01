@@ -6,14 +6,14 @@ import { SocialMedia } from 'components/socialMedia';
 
 export function SectionProjectDevelopment({ projectsFillter }: any) {
   return (
-    <div className="max-w-[90%] m-auto">
+    <div className="max-w-[1000px] m-auto">
       <H1 text="DESENVOLVIMENTO DO PROJETO" />
 
       <div className="mt-10 max-w-[2000px] m-auto">
         <Image
-          src={projectsFillter.image}
-          height={200}
-          width={200}
+          src={projectsFillter.imagePrototype}
+          height={1000}
+          width={1000}
           alt={projectsFillter.name}
           className="h-full w-full"
         />
@@ -21,34 +21,22 @@ export function SectionProjectDevelopment({ projectsFillter }: any) {
 
       <div className="mt-10">
         <p className="text-justify md:text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-          inventore, ratione nulla odit repellendus consequatur ullam modi fuga,
-          repudiandae, quam tempore. Laudantium, dicta odio quis aut illo enim
-          voluptates ut.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Iure inventore, ratione nulla odit repellendus consequatur ullam modi
-          fuga, repudiandae, quam tempore. Laudantium, dicta odio quis aut illo
-          enim voluptates ut.
+          {projectsFillter.textPrototype}
         </p>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 max-w-[400px] max-h-[400px] m-auto">
         <Image
           src={projectsFillter.imageTec}
-          height={200}
-          width={200}
+          height={1000}
+          width={1000}
           alt={projectsFillter.name}
         />
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 ">
         <p className="text-justify md:text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-          inventore, ratione nulla odit repellendus consequatur ullam modi fuga,
-          repudiandae, quam tempore. Laudantium, dicta odio quis aut illo enim
-          voluptates ut.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Iure inventore, ratione nulla odit repellendus consequatur ullam modi
-          fuga, repudiandae, quam tempore. Laudantium, dicta odio quis aut illo
-          enim voluptates ut.
+          {projectsFillter.textTechnology}
         </p>
       </div>
 

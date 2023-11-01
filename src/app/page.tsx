@@ -53,7 +53,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <MoreInformation url="/github" />
+        <MoreInformation url="/" text="VEJA MAIS PROJETOS CLICANDO" />
       </section>
     </main>
   );
