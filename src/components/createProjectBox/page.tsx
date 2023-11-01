@@ -1,15 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface createProjectBoxProps {
+interface CreateProjectBoxProps {
   name: string;
   client: string;
   link: string;
   image: string;
   description: string;
+  slug: string;
+  imageTec: string;
 }
 
-export function createProjectBox(array: createProjectBoxProps[]) {
+export function createProjectBox(array: CreateProjectBoxProps[]) {
   return array.map((obj, index) => (
     <div
       key={index}
@@ -17,7 +19,7 @@ export function createProjectBox(array: createProjectBoxProps[]) {
     >
       <div className="mb-16 bg-gradient-to-r from-blue-700 to-cyan-400 p-2 rounded-xl min-h-[300px]">
         <div className="bg-white rounded  w-full h-full min-h-[300px] ">
-          <Link href={obj.link} className="h-full w-full">
+          <Link href={`/${obj.slug}`} className="h-full w-full">
             <Image
               src={obj.image}
               height={300}
@@ -31,7 +33,7 @@ export function createProjectBox(array: createProjectBoxProps[]) {
             <p className="text-center text-xs font-semibold uppercase text-black/70 m-auto">
               {obj.client}
             </p>
-            <Link href={obj.link} className="h-full w-full">
+            <Link href={`/${obj.slug}`} className="h-full w-full">
               <h1 className=" text-center text-lg font-extrabold uppercase">
                 {obj.name}
               </h1>

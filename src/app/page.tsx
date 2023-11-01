@@ -2,29 +2,13 @@ import Link from 'next/link';
 
 import { SocialMedia } from '../components/socialMedia';
 import { createProjectBox } from 'components/createProjectBox/page';
+import { MoreInformation } from 'components/more information/page';
 
-const projects = [
-  {
-    name: 'Site do bar e restaurante Cabeças bar',
-    client: 'cabeças bar',
-    link: 'https://cabecas-bar.online',
-    image: 'Mackups.svg',
-    description:
-      'O site foi desenvolvido para que o restaurante Cabeças Bar tenha presença na internet, uma vez que o restaurante não possuía um site anteriormente. O objetivo deste site é fornecer informações sobre o restaurante, incluindo dados de contato, localização e cardápio, para que futuros clientes possam encontrar o restaurante com facilidade.'
-  },
-  {
-    name: 'Site Nova Lands',
-    client: 'Nova Lands',
-    link: 'https://novalands.vercel.app/',
-    image: 'novaLands.svg',
-    description:
-      'O site que eu criei é uma versão aprimorada do site oficial, que apresentava alguns problemas de design responsivo, acessibilidade e internacionalização. Eu me encarreguei de todo o desenvolvimento do site e de todas as melhorias. Agora, o site está mais bonito, funcional e adaptado para diferentes públicos e dispositivos.'
-  }
-];
-
-const projectBox = createProjectBox(projects);
+import { Projects } from 'projects/page';
 
 export default function Home() {
+  const projectBox = createProjectBox(Projects());
+
   return (
     <main className="h-full w-full text-white">
       <section className="h-screen flex justify-center items-center bg-gradient-radial from-cyan-500 to-blue-500">
@@ -69,18 +53,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <p className="text-black/70 text-center font-extrabold uppercase underline decoration-solid">
-          Veja mais Projetos clicando
-          {
-            <Link
-              href={'https://github.com/ArthurSilv4'}
-              className="text-blue-700 ml-1"
-            >
-              aqui
-            </Link>
-          }
-        </p>
+        <MoreInformation url="/github" />
       </section>
     </main>
   );
