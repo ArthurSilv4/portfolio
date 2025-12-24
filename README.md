@@ -6,7 +6,7 @@ Meu portfólio pessoal desenvolvido com React, TypeScript e Tailwind CSS, aprese
 
 ## Acesse o Portfolio
 
-**[arthursouza.dev](https://arthursouza.dev)**
+**[Link do Portfolio](https://arthursilv4.github.io/portfolio/)**
 
 ## Tecnologias
 
