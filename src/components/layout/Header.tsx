@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Menu } from 'lucide-react'
-import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '../ui/sheet'
 import { Button } from '../ui/button'
 import { cn } from '../../lib/utils'
 
@@ -16,11 +17,26 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const location = useLocation()
+  const isProjectPage = location.pathname.startsWith('/projeto/')
+
   const navLinks = [
     { href: '#about', label: 'Sobre' },
     { href: '#projects', label: 'Projetos' },
     { href: '#contact', label: 'Contato' },
   ]
+
+  const handleNavClick = (href: string) => {
+    if (isProjectPage) {
+      window.location.href = `/${href}`
+    } else {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    setOpen(false)
+  }
 
   return (
     <header
@@ -37,13 +53,13 @@ export function Header() {
 
       <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6">
         {navLinks.map(link => (
-          <a
+          <button
             key={link.href}
-            href={link.href}
-            className="text-[14px] font-medium text-zinc-400 hover:text-white transition-colors"
+            onClick={() => handleNavClick(link.href)}
+            className="text-[14px] font-medium text-zinc-400 hover:text-white transition-colors cursor-pointer bg-transparent border-none"
           >
             {link.label}
-          </a>
+          </button>
         ))}
       </nav>
 
@@ -79,16 +95,16 @@ export function Header() {
           </SheetTrigger>
 
           <SheetContent side="top" className="w-full bg-zinc-950 border-zinc-800 pt-20">
+            <SheetTitle className="sr-only">Menu de Navegação</SheetTitle>
             <nav className="flex flex-col items-center gap-6">
               {navLinks.map(link => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-lg font-medium text-zinc-300 hover:text-white transition-colors"
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-lg font-medium text-zinc-300 hover:text-white transition-colors cursor-pointer bg-transparent border-none"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
               <div className="flex flex-col gap-3 w-full max-w-xs m-4">
                 <a href="https://drive.google.com/file/d/1Im3rAUGREScUD9KgesuQAoLhNSbfmRSz/view?usp=sharing" target="_blank" rel="noopener noreferrer">

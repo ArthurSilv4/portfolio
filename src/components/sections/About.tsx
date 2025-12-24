@@ -73,7 +73,7 @@ export function About() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-6">
               <div className="relative pl-6 border-l border-zinc-800">
                 <span className="text-xs font-mono text-zinc-500 mb-1 block">abr de 2024 - set de 2024</span>
-                <h4 className="text-sm font-semibold text-white">Professor de informatica</h4>
+                <h4 className="text-sm font-semibold text-white">Professor De Informatica</h4>
                 <p className="text-xs text-zinc-400 mt-1">
                   Atuei como professor de informática e criação de jogos, ensinando crianças
                   conceitos de lógica de programação por meio do desenvolvimento de jogos no
@@ -82,7 +82,7 @@ export function About() {
               </div>
               <div className="relative pl-6 border-l border-zinc-800">
                 <span className="text-xs font-mono text-zinc-500 mb-1 block">out de 2024 - mar de 2025</span>
-                <h4 className="text-sm font-semibold text-white">Analista de sistema</h4>
+                <h4 className="text-sm font-semibold text-white">Analista De Sistema</h4>
                 <p className="text-xs text-zinc-400 mt-1">
                   Participei do desenvolvimento de um novo produto, contribuindo desde a
                   concepção até a entrega. Fui responsável pela migração de um sistema legado
@@ -92,7 +92,7 @@ export function About() {
               </div>
               <div className="relative pl-6 border-l border-zinc-800">
                 <span className="text-xs font-mono text-zinc-500 mb-1 block">mar de 2025 - dez de 2025</span>
-                <h4 className="text-sm font-semibold text-white">Suporte Tecnico</h4>
+                <h4 className="text-sm font-semibold text-white">Suporte Técnico</h4>
                 <p className="text-xs text-zinc-400 mt-1">
                   Prestei suporte técnico e fui responsável pelo desenvolvimento de soluções internas,
                   incluindo a criação de um microserviço de Inteligência Artificial e do servidor MCP
@@ -101,7 +101,7 @@ export function About() {
               </div>
               <div className="relative pl-6 border-l border-white/20">
                 <span className="text-xs font-mono text-green-400 mb-1 block">dez de 2025 - Presente</span>
-                <h4 className="text-sm font-semibold text-white">Analista de sistema</h4>
+                <h4 className="text-sm font-semibold text-white">Analista De Sistema</h4>
                 <p className="text-xs text-zinc-400 mt-1">
                   Trabalho no desenvolvimento e manutenção de sistemas, realizando correções,
                   melhorias contínuas e apoiando a evolução do produto.                
