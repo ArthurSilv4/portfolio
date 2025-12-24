@@ -1,44 +1,8 @@
-import { Card, CardContent, CardDescription } from "../ui/card";
+import { ProjectCard } from "../ProjectCard";
+import { getAllProjects } from "../../lib/projects";
 
 export function Projects() {
-  const projects = [
-    {
-      id: 1,
-      description:
-        "Plataforma completa de e-commerce com carrinho, pagamentos e administração",
-      link: "http://127.0.0.1:5173/projeto/exemplo",
-    },
-    {
-      id: 2,
-      description:
-        "API RESTful para gestão de recursos com autenticação JWT e documentação Swagger",
-      link: "https://example.com/project1",
-    },
-    {
-      id: 3,
-      description:
-        "Dashboard interativo para visualização de dados e métricas em tempo real",
-      link: "https://example.com/project1",
-    },
-    {
-      id: 4,
-      description:
-        "Arquitetura de microserviços com mensageria e event sourcing",
-      link: "https://example.com/project1",
-    },
-    {
-      id: 5,
-      description:
-        "Aplicativo mobile multiplataforma com sincronização offline",
-      link: "https://example.com/project1",
-    },
-    {
-      id: 6,
-      description:
-        "Plataforma de monitoramento de aplicações com alertas e logs centralizados",
-      link: "https://example.com/project1",
-    },
-  ];
+  const projects = getAllProjects();
 
   return (
     <section id="projects" className=" py-16 lg:py-24">
@@ -47,21 +11,15 @@ export function Projects() {
           Projetos mais recentes
         </h2>
 
-        <div className="flex flex-wrap gap-6 justify-center items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <a
-              href={project.link}
-              key={project.id}
-              className="w-full sm:w-95"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Card className="h-80 rounded-md">
-                <CardContent>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardContent>
-              </Card>
-            </a>
+            <ProjectCard
+              key={project.slug}
+              title={project.title}
+              category={project.category}
+              image={project.image}
+              href={`/projeto/${project.slug}`}
+            />
           ))}
         </div>
       </div>
