@@ -12,7 +12,7 @@ export function Projects() {
             /projetos
           </span>
           <h2 className="text-[32px] md:text-[40px] leading-tight font-normal text-white tracking-tight">
-            Projetos Selecionados
+            Projetos de Portfólio
           </h2>
         </div>
 
