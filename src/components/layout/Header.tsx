@@ -4,6 +4,7 @@ import { Menu } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '../ui/sheet'
 import { Button } from '../ui/button'
 import { cn } from '../../lib/utils'
+import { Link } from "react-router-dom";
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -46,9 +47,11 @@ export function Header() {
       )}
     >
       <div className="flex items-center gap-8">
-        <a href="/" className="text-[16px] font-bold tracking-tight uppercase text-white hover:opacity-80 transition-opacity font-sans">
+        <Link
+          to="/"
+          className="text-[16px] font-bold tracking-tight uppercase text-white hover:opacity-80 transition-opacity font-sans">
           ARTHUR.DEV
-        </a>
+        </Link>
       </div>
 
       <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6">
