@@ -1,7 +1,22 @@
 import { ArrowDown, Terminal } from "lucide-react"
+import { useLocation } from 'react-router-dom'
 import { Button } from "../ui/button"
 
 export function Hero() {
+  const location = useLocation()
+  const isProjectPage = location.pathname.startsWith('/projeto/')
+
+  const handleProjectsClick = () => {
+    if (isProjectPage) {
+      window.location.href = '/#projects'
+    } else {
+      const element = document.querySelector('#projects')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
     <section className="relative overflow-hidden pt-[112px] pb-24 lg:pb-32">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] glow-purple opacity-20 pointer-events-none" />
@@ -17,13 +32,12 @@ export function Hero() {
         </h1>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <a href="#projects">
-            <Button
-              className="rounded-full h-auto py-2.5 px-6 bg-white text-black hover:bg-zinc-200 text-[14px] font-medium transition-transform active:scale-95"
-            >
-              Ver Projetos <ArrowDown className="ml-2 h-4 w-4" />
-            </Button>
-          </a>
+          <Button
+            onClick={handleProjectsClick}
+            className="rounded-full h-auto py-2.5 px-6 bg-white text-black hover:bg-zinc-200 text-[14px] font-medium transition-transform active:scale-95 cursor-pointer"
+          >
+            Ver Projetos <ArrowDown className="ml-2 h-4 w-4" />
+          </Button>
         </div>
 
         <div className="w-full max-w-4xl self-start rounded-xl border border-white/10 bg-[#0A0A0A] shadow-2xl overflow-hidden backdrop-blur-sm group">
