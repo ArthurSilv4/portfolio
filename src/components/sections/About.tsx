@@ -12,8 +12,10 @@ export function About() {
     "Redis",
     "Git & CI/CD",
     "Azure DevOps",
+    "Semantic Kernel",
     "Microsoft Agent Framework",
     "MCP",
+    "Qdrant",
     "React",
     "TypeScript",
     "C#",
@@ -27,15 +29,14 @@ export function About() {
 
         <div className="mb-12">
           <span className="text-[15px] font-mono text-zinc-500 mb-2 block">
-            /about
+            /sobre
           </span>
           <h2 className="text-[32px] md:text-[40px] leading-tight font-normal text-white">
-            Engineering & Experience
+            Engenharia & Arquitetura
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* 1. Bio Card - Spans 2 cols */}
           <BentoCard
             title="Minha Trajetória"
             className="md:col-span-2"
@@ -43,17 +44,17 @@ export function About() {
           >
             <div className="mt-2 text-zinc-400 leading-relaxed text-lg">
               <p className="mb-4">
-                Sou um desenvolvedor .NET apaixonado por construir sistemas escaláveis e de alta performance.
-                Com foco em arquitetura limpa, transformo requisitos complexos em software robusto e manutenível.
+                Sou desenvolvedor .NET e atuo principalmente no backend, trabalhando com sistemas que precisam escalar,
+                performar bem e continuar fáceis de manter ao longo do tempo. Priorizo decisões de arquitetura antes da
+                implementação, buscando soluções que façam sentido no longo prazo.
               </p>
               <p>
-                Atualmente, exploro a interseção entre engenharia de software tradicional e Inteligência Artificial,
-                buscando novas formas de otimizar fluxos de trabalho e criar experiências digitais inteligentes.
+                Nos últimos projetos, tenho integrado soluções de Inteligência Artificial ao software tradicional,
+                sempre com foco em resolver problemas reais e melhorar o dia a dia de quem usa o sistema.
               </p>
             </div>
           </BentoCard>
 
-          {/* 2. Skills Card */}
           <BentoCard title="Stack Tecnológica" className="md:col-span-1">
             <div className="flex flex-wrap gap-2 mt-4">
               {skills.map((skill) => (
@@ -68,28 +69,43 @@ export function About() {
             </div>
           </BentoCard>
 
-          {/* 3. Timeline / Experience - Full Width or Spanned? Let's do Full Width for clarity */}
           <BentoCard title="Timeline" className="md:col-span-3">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-6">
               <div className="relative pl-6 border-l border-zinc-800">
-                <span className="text-xs font-mono text-zinc-500 mb-1 block">2017</span>
-                <h4 className="text-sm font-semibold text-white">Início</h4>
-                <p className="text-xs text-zinc-400 mt-1">Lógica & Primeiros Projetos C#</p>
+                <span className="text-xs font-mono text-zinc-500 mb-1 block">abr de 2024 - set de 2024</span>
+                <h4 className="text-sm font-semibold text-white">Professor de informatica</h4>
+                <p className="text-xs text-zinc-400 mt-1">
+                  Atuei como professor de informática e criação de jogos, ensinando crianças
+                  conceitos de lógica de programação por meio do desenvolvimento de jogos no
+                  Roblox (Lua) e no Construct.
+                </p>
               </div>
               <div className="relative pl-6 border-l border-zinc-800">
-                <span className="text-xs font-mono text-zinc-500 mb-1 block">2019</span>
-                <h4 className="text-sm font-semibold text-white">.NET & Web</h4>
-                <p className="text-xs text-zinc-400 mt-1">APIs, Bancos de Dados, Web Apps</p>
+                <span className="text-xs font-mono text-zinc-500 mb-1 block">out de 2024 - mar de 2025</span>
+                <h4 className="text-sm font-semibold text-white">Analista de sistema</h4>
+                <p className="text-xs text-zinc-400 mt-1">
+                  Participei do desenvolvimento de um novo produto, contribuindo desde a
+                  concepção até a entrega. Fui responsável pela migração de um sistema legado
+                  Win32 para Linux, utilizando LVGL para criação de interfaces gráficas mais
+                  modernas e otimizadas.
+                </p>
               </div>
               <div className="relative pl-6 border-l border-zinc-800">
-                <span className="text-xs font-mono text-zinc-500 mb-1 block">2021</span>
-                <h4 className="text-sm font-semibold text-white">Cloud & DevOps</h4>
-                <p className="text-xs text-zinc-400 mt-1">Azure, Docker, CI/CD Pipelines</p>
+                <span className="text-xs font-mono text-zinc-500 mb-1 block">mar de 2025 - dez de 2025</span>
+                <h4 className="text-sm font-semibold text-white">Suporte Tecnico</h4>
+                <p className="text-xs text-zinc-400 mt-1">
+                  Prestei suporte técnico e fui responsável pelo desenvolvimento de soluções internas,
+                  incluindo a criação de um microserviço de Inteligência Artificial e do servidor MCP
+                  integrado ao sistema ERP, utilizando C# e ASP.NET Core com Semantic Kernel.
+                </p>
               </div>
               <div className="relative pl-6 border-l border-white/20">
-                <span className="text-xs font-mono text-green-400 mb-1 block">2023 - Presente</span>
-                <h4 className="text-sm font-semibold text-white">Senior & AI</h4>
-                <p className="text-xs text-zinc-400 mt-1">Arquitetura, Liderança Técnica, IA</p>
+                <span className="text-xs font-mono text-green-400 mb-1 block">dez de 2025 - Presente</span>
+                <h4 className="text-sm font-semibold text-white">Analista de sistema</h4>
+                <p className="text-xs text-zinc-400 mt-1">
+                  Trabalho no desenvolvimento e manutenção de sistemas, realizando correções,
+                  melhorias contínuas e apoiando a evolução do produto.                
+                </p>
               </div>
             </div>
           </BentoCard>
