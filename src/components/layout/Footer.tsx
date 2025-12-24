@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin } from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 
 export function Footer() {
     return (
@@ -7,19 +7,13 @@ export function Footer() {
 
                 <div className="flex flex-col items-center md:items-start gap-2">
                     <span className="text-sm font-semibold text-white tracking-tight uppercase">Arthur.dev</span>
-                    <span className="text-xs text-zinc-500">
-                        Desenvolvido com React, Tailwind & Estilo Cursor.
-                    </span>
                 </div>
 
                 <div className="flex items-center gap-6">
-                    <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+                    <a href="https://github.com/ArthurSilv4" className="text-zinc-500 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                         <Github className="w-5 h-5" />
                     </a>
-                    <a href="#" className="text-zinc-500 hover:text-white transition-colors">
-                        <Twitter className="w-5 h-5" />
-                    </a>
-                    <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+                    <a href="https://www.linkedin.com/in/arthur-souza-dev/" className="text-zinc-500 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="w-5 h-5" />
                     </a>
                 </div>
