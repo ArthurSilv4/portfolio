@@ -4,33 +4,29 @@ import { Button } from "../ui/button"
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-[112px] pb-24 lg:pb-32">
-      {/* Glow Effects */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] glow-purple opacity-20 pointer-events-none" />
 
       <div className="container mx-auto px-5 relative z-10 flex flex-col items-start text-left">
-        {/* 1. Label */}
         <span className="text-[15px] font-mono text-zinc-500 mb-2 block tracking-tight">
           arthur@portfolio:~$ iniciar-apresentacao
         </span>
 
-        {/* 2. H1 Title */}
         <h1 className="text-[40px] leading-[1.1] font-normal text-white mb-6 max-w-3xl tracking-tight sm:text-[56px] sm:leading-[1.1]">
-          Construindo Soluções <br className="hidden sm:block" />
-          <span className="text-zinc-400">Digitais Escaláveis.</span>
+          Desenvolvendo Soluções <br className="hidden sm:block" />
+          <span className="text-zinc-400">Modernas e Escaláveis.</span>
         </h1>
 
-        {/* 3. Primary Action */}
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <Button
-            className="rounded-full h-auto py-2.5 px-6 bg-white text-black hover:bg-zinc-200 text-[14px] font-medium transition-transform active:scale-95"
-          >
-            Ver Projetos <ArrowDown className="ml-2 h-4 w-4" />
-          </Button>
+          <a href="#projects">
+            <Button
+              className="rounded-full h-auto py-2.5 px-6 bg-white text-black hover:bg-zinc-200 text-[14px] font-medium transition-transform active:scale-95"
+            >
+              Ver Projetos <ArrowDown className="ml-2 h-4 w-4" />
+            </Button>
+          </a>
         </div>
 
-        {/* Interactive Preview / Code Snippet */}
         <div className="w-full max-w-4xl self-start rounded-xl border border-white/10 bg-[#0A0A0A] shadow-2xl overflow-hidden backdrop-blur-sm group">
-          {/* Window Controls */}
           <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-white/5">
             <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
@@ -43,7 +39,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Code Content */}
           <div className="p-6 font-mono text-sm overflow-x-auto">
             <div className="flex flex-col gap-1">
               <div className="flex">
