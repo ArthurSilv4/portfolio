@@ -1,102 +1,99 @@
-import { Card, CardContent, CardTitle } from "../ui/card";
+import { BentoCard } from "../ui/BentoCard";
+import { Badge } from "../ui/badge";
 
 export function About() {
   const skills = [
-    {
-      title: ".NET Core",
-    },
-    {
-      title: "React",
-    },
-    {
-      title: "Azure",
-    },
-    {
-      title: "SQL Server",
-    },
-    {
-      title: "Git & CI/CD",
-    },
-    {
-      title: "AI",
-    },
-    {
-      title: "Docker",
-    },
-    {
-      title: "Redis",
-    },
+    ".NET Core",
+    "ASP.NET Web API",
+    "Entity Framework",
+    "SQL Server",
+    "Azure",
+    "Docker",
+    "Redis",
+    "Git & CI/CD",
+    "Azure DevOps",
+    "Microsoft Agent Framework",
+    "MCP",
+    "React",
+    "TypeScript",
+    "C#",
+    "AI Integration",
+    "Azure OpenAI"
   ];
 
   return (
-    <section
-      id="about"
-      className="container mx-auto px-4 lg:px-6 py-16 lg:py-24"
-    >
-      {/* Skills */}
-      <div>
-        <h2 className="text-md font-semibold mb-8 text-center">
-          Tecnologias e ferramentas ultilizadas diariamente
-        </h2>
+    <section id="about" className="py-24 bg-[#0A0A0A] border-b border-white/5">
+      <div className="container mx-auto px-5">
 
-        <div className="flex flex-wrap gap-4 justify-center">
-          {skills.map((skill) => {
-            return (
-              <Card
-                key={skill.title}
-                className="rounded-md h-24 w-40 flex items-center justify-center"
-              >
-                <CardContent>
-                  <CardTitle>{skill.title}</CardTitle>
-                </CardContent>
-              </Card>
-            );
-          })}
+        <div className="mb-12">
+          <span className="text-[15px] font-mono text-zinc-500 mb-2 block">
+            /about
+          </span>
+          <h2 className="text-[32px] md:text-[40px] leading-tight font-normal text-white">
+            Engineering & Experience
+          </h2>
         </div>
-      </div>
 
-      {/* Sobre mim */}
-      <div className="mt-16">
-        <Card className="rounded-md min-h-150">
-          <CardContent>
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-              {/* Texto à esquerda */}
-              <div className="flex-1 flex flex-col items-center justify-center text-center md:items-start md:justify-start md:text-left m-auto">
-                <h3 className="text-lg font-semibold mb-2">Minha trajetória</h3>
-                <p className="text-muted-foreground">
-                  Sou desenvolvedor .NET com experiência em projetos escaláveis,
-                  arquitetura limpa e foco em qualidade. Atuo com React, Azure,
-                  CI/CD e mais.
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* 1. Bio Card - Spans 2 cols */}
+          <BentoCard
+            title="Minha Trajetória"
+            className="md:col-span-2"
+            description=""
+          >
+            <div className="mt-2 text-zinc-400 leading-relaxed text-lg">
+              <p className="mb-4">
+                Sou um desenvolvedor .NET apaixonado por construir sistemas escaláveis e de alta performance.
+                Com foco em arquitetura limpa, transformo requisitos complexos em software robusto e manutenível.
+              </p>
+              <p>
+                Atualmente, exploro a interseção entre engenharia de software tradicional e Inteligência Artificial,
+                buscando novas formas de otimizar fluxos de trabalho e criar experiências digitais inteligentes.
+              </p>
+            </div>
+          </BentoCard>
+
+          {/* 2. Skills Card */}
+          <BentoCard title="Stack Tecnológica" className="md:col-span-1">
+            <div className="flex flex-wrap gap-2 mt-4">
+              {skills.map((skill) => (
+                <Badge
+                  key={skill}
+                  variant="secondary"
+                  className="bg-zinc-800/50 text-zinc-300 ring-1 ring-inset ring-white/10 hover:bg-zinc-800 transition-colors rounded-md px-2.5 py-1.5 font-medium"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </BentoCard>
+
+          {/* 3. Timeline / Experience - Full Width or Spanned? Let's do Full Width for clarity */}
+          <BentoCard title="Timeline" className="md:col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-6">
+              <div className="relative pl-6 border-l border-zinc-800">
+                <span className="text-xs font-mono text-zinc-500 mb-1 block">2017</span>
+                <h4 className="text-sm font-semibold text-white">Início</h4>
+                <p className="text-xs text-zinc-400 mt-1">Lógica & Primeiros Projetos C#</p>
               </div>
-              {/* Mapa de Carreira */}
-              <div className="flex-1 flex justify-center md:justify-end bg-black/80 p-6 md:p-12 lg:p-20 rounded-md">
-                <ol className="relative border-l border-gray-300 dark:border-gray-700 max-w-xs w-full mx-auto">
-                  <li className="mb-10 ml-6">
-                    <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full ring-8 ring-white dark:ring-gray-900 text-white">1</span>
-                    <h4 className="font-semibold">Início na Programação</h4>
-                    <p className="text-sm text-muted-foreground">2017 - Primeiros projetos em C# e lógica de programação.</p>
-                  </li>
-                  <li className="mb-10 ml-6">
-                    <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full ring-8 ring-white dark:ring-gray-900 text-white">2</span>
-                    <h4 className="font-semibold">.NET & Web</h4>
-                    <p className="text-sm text-muted-foreground">2019 - Desenvolvimento de APIs, aplicações web e integração com bancos de dados.</p>
-                  </li>
-                  <li className="mb-10 ml-6">
-                    <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full ring-8 ring-white dark:ring-gray-900 text-white">3</span>
-                    <h4 className="font-semibold">Cloud & DevOps</h4>
-                    <p className="text-sm text-muted-foreground">2021 - Experiência com Azure, CI/CD, Docker e automação de deploys.</p>
-                  </li>
-                  <li className="ml-6">
-                    <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full ring-8 ring-white dark:ring-gray-900 text-white">4</span>
-                    <h4 className="font-semibold">IA & Projetos Atuais</h4>
-                    <p className="text-sm text-muted-foreground">2023 - Foco em IA, arquitetura escalável e projetos inovadores.</p>
-                  </li>
-                </ol>
+              <div className="relative pl-6 border-l border-zinc-800">
+                <span className="text-xs font-mono text-zinc-500 mb-1 block">2019</span>
+                <h4 className="text-sm font-semibold text-white">.NET & Web</h4>
+                <p className="text-xs text-zinc-400 mt-1">APIs, Bancos de Dados, Web Apps</p>
+              </div>
+              <div className="relative pl-6 border-l border-zinc-800">
+                <span className="text-xs font-mono text-zinc-500 mb-1 block">2021</span>
+                <h4 className="text-sm font-semibold text-white">Cloud & DevOps</h4>
+                <p className="text-xs text-zinc-400 mt-1">Azure, Docker, CI/CD Pipelines</p>
+              </div>
+              <div className="relative pl-6 border-l border-white/20">
+                <span className="text-xs font-mono text-green-400 mb-1 block">2023 - Presente</span>
+                <h4 className="text-sm font-semibold text-white">Senior & AI</h4>
+                <p className="text-xs text-zinc-400 mt-1">Arquitetura, Liderança Técnica, IA</p>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </BentoCard>
+        </div>
       </div>
     </section>
   );

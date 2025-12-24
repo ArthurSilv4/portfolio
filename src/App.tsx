@@ -1,4 +1,5 @@
 import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
 import { Routes, Route } from "react-router-dom";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
@@ -7,9 +8,9 @@ import Projeto from "./pages/Projeto";
 
 function App() {
   return (
-    <div className="dark">
+    <div className="dark min-h-screen flex flex-col bg-background text-foreground">
       <Header />
-      <main className="bg-background text-foreground min-h-screen">
+      <main className="flex-1">
         <Routes>
           <Route
             path="/"
@@ -24,6 +25,7 @@ function App() {
           <Route path="/projeto/:id" element={<Projeto />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

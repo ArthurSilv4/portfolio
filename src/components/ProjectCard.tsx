@@ -1,12 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
-import { cn } from "../lib/utils";
+import { BentoCard } from "./ui/BentoCard";
 
 interface ProjectCardProps {
     title: string;
     category?: string;
     image: string;
     href?: string;
-    onClick?: () => void;
     className?: string;
 }
 
@@ -15,45 +14,31 @@ export function ProjectCard({
     category,
     image,
     href,
-    onClick,
     className,
 }: ProjectCardProps) {
-    const Component = href ? "a" : "div";
 
     return (
-        <Component
+        <BentoCard
             href={href}
-            onClick={onClick}
-            className={cn(
-                "group relative block overflow-hidden rounded-lg bg-card focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
-                className
-            )}
+            title={title}
+            description={category}
+            className={className}
         >
-            {/* Image Container with Hover Scale */}
-            <div className="aspect-[4/3] w-full overflow-hidden">
+            <div className="relative mt-4 overflow-hidden rounded-lg aspect-video group-hover:ring-1 group-hover:ring-white/10 transition-all">
                 <img
                     src={image}
                     alt={title}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Dark Overlay on Hover */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            </div>
+                {/* Subtle overlay */}
+                <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10" />
 
-            {/* Content Overlay (Appears on Hover/Focus) */}
-            <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="transform translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
-                    {category && (
-                        <span className="mb-2 block text-xs font-medium tracking-wider text-white/80 uppercase">
-                            {category}
-                        </span>
-                    )}
-                    <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                        {title}
-                        <ArrowUpRight className="h-5 w-5 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
-                    </h3>
+                <div className="absolute top-4 right-4 opacity-0 -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                    <div className="bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10">
+                        <ArrowUpRight className="h-4 w-4 text-white" />
+                    </div>
                 </div>
             </div>
-        </Component>
+        </BentoCard>
     );
 }

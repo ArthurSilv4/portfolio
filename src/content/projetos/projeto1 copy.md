@@ -5,7 +5,6 @@ category: "Web Development"
 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop"
 date: "2025-01-01"
 technologies: ["React", "TypeScript", "Tailwind"]
-link: "/"
 ---
 
 # Visão Geral

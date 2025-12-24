@@ -9,6 +9,7 @@ export interface Project {
     content: string;
     date?: string;
     technologies?: string[];
+    link?: string;
 }
 
 // Import all markdown files from the content directory
@@ -49,6 +50,7 @@ export function getAllProjects(): Project[] {
             date: data.date ? String(data.date) : undefined,
             technologies: data.technologies || [],
             content,
+            link: data.link || ''
         };
     });
 

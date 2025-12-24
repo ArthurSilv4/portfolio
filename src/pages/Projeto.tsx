@@ -3,9 +3,12 @@ import { Separator } from "../components/ui/separator";
 import { ProjectCard } from "../components/ProjectCard";
 import { getProjectBySlug, getAllProjects } from "../lib/projects";
 import ReactMarkdown from 'react-markdown';
+import { ArrowLeft, Calendar } from "lucide-react";
+import { Button } from "../components/ui/button";
 
 export default function Projeto() {
   const { id } = useParams<{ id: string }>();
+  // Use a fallback or handle undefined strictly
   const projeto = id ? getProjectBySlug(id) : undefined;
 
   // Get other projects, excluding the current one
@@ -15,79 +18,103 @@ export default function Projeto() {
 
   if (!projeto) {
     return (
-      <div className="min-h-screen bg-[#0B0B0B] text-white flex items-center justify-center flex-col">
+      <div className="min-h-screen bg-zinc-950 text-white flex items-center justify-center flex-col">
         <h1 className="text-4xl font-bold mb-4">Projeto não encontrado</h1>
-        <Link to="/" className="text-blue-500 hover:text-blue-400">Voltar ao Início</Link>
+        <Link to="/">
+          <Button variant="outline">Voltar ao Início</Button>
+        </Link>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-white">
-      {/* Hero Section */}
-      <div className="relative h-[60vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent z-10" />
-        <img
-          src={projeto.image}
-          alt={projeto.title}
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 z-20">
-          <div className="container mx-auto">
-            <span className="text-blue-400 tracking-widest uppercase text-sm font-semibold mb-2 block animate-fade-in-up">
-              {projeto.category}
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold font-sans mb-4 tracking-tight animate-fade-in-up animation-delay-100">
-              {projeto.title}
-            </h1>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-zinc-950 pt-24 pb-16">
+      {/* Glow Effect */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] glow-purple opacity-20 pointer-events-none" />
 
-      <main className="container mx-auto px-4 py-12 md:px-16">
+      <main className="container mx-auto px-4 md:px-6 relative z-10">
+
+        {/* Breadcrumb / Back */}
+        <div className="mb-8">
+          <Link to="/" className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors">
+            <ArrowLeft className="mr-2 h-4 w-4" /> Voltar para Projetos
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
           {/* Main Content Column */}
           <div className="lg:col-span-8">
-            <div className="text-lg text-gray-300 leading-relaxed">
-              <p className="text-xl text-gray-400 font-light mb-8 border-l-4 border-blue-500 pl-4">
+
+            {/* Header */}
+            <div className="mb-8">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-flex items-center rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-xs font-semibold text-purple-400">
+                  {projeto.category}
+                </span>
+                {projeto.date && (
+                  <span className="inline-flex items-center text-xs text-zinc-500">
+                    <Calendar className="mr-1 h-3 w-3" /> {projeto.date}
+                  </span>
+                )}
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
+                {projeto.title}
+              </h1>
+              <p className="text-xl text-zinc-400 leading-relaxed border-l-2 border-zinc-800 pl-4">
                 {projeto.description}
               </p>
-              <Separator className="my-8 bg-gray-800" />
+            </div>
 
-              {/* Markdown Content */}
-              <div className="prose prose-invert max-w-none">
-                <ReactMarkdown>{projeto.content}</ReactMarkdown>
-              </div>
+            {/* Featured Image - styled as a large Bento card */}
+            <div className="rounded-2xl border border-white/10 bg-zinc-900/50 p-2 mb-10 overflow-hidden">
+              <img
+                src={projeto.image}
+                alt={projeto.title}
+                className="w-full h-auto rounded-xl object-cover"
+              />
+            </div>
+
+            {/* Markdown Content */}
+            <div className="prose prose-invert prose-zinc max-w-none">
+              <ReactMarkdown>{projeto.content}</ReactMarkdown>
             </div>
           </div>
 
-          {/* Sidebar / Metadata */}
+          {/* Sidebar */}
           <div className="lg:col-span-4 space-y-8">
-            <div className="bg-[#151515] p-6 rounded-lg border border-white/5">
-              <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Detalhes do Projeto</h3>
-              <ul className="space-y-4 text-sm">
+            <div className="rounded-2xl border border-white/5 bg-zinc-900/30 p-6 backdrop-blur-md sticky top-24">
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">Informações</h3>
+
+              <div className="space-y-6">
                 {projeto.technologies && projeto.technologies.length > 0 && (
-                  <li className="flex flex-col gap-2">
-                    <span className="text-gray-400">Tecnologias</span>
+                  <div>
+                    <span className="text-xs font-medium text-zinc-500 uppercase block mb-3">Stack</span>
                     <div className="flex flex-wrap gap-2">
                       {projeto.technologies.map(tech => (
-                        <span key={tech} className="bg-white/10 px-2 py-1 rounded text-xs">{tech}</span>
+                        <span key={tech} className="inline-flex items-center rounded-md bg-zinc-800 px-2 py-1 text-xs font-medium text-zinc-300 ring-1 ring-inset ring-white/10">
+                          {tech}
+                        </span>
                       ))}
                     </div>
-                  </li>
+                  </div>
                 )}
-                {projeto.date && (
-                  <li className="flex justify-between">
-                    <span className="text-gray-400">Data</span>
-                    <span>{projeto.date}</span>
-                  </li>
-                )}
-                <li className="flex justify-between">
-                  <span className="text-gray-400">Cliente</span>
-                  <span>Personal Project</span>
-                </li>
-              </ul>
+
+                <Separator className="bg-white/10" />
+
+                <div>
+                  {projeto.link && (
+                    <>
+                      <span className="text-xs font-medium text-zinc-500 uppercase block mb-3">Ações</span>
+                      <a href={projeto.link} target="_blank" rel="noopener noreferrer">
+                        <Button className="w-full bg-white text-black hover:bg-zinc-200">
+                          Visualizar Projeto
+                        </Button>
+                      </a>
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -95,14 +122,10 @@ export default function Projeto() {
         {/* More Projects Gallery */}
         <section className="mt-32">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold">Mais Projetos</h2>
-            <Link to="/" className="text-sm text-gray-400 hover:text-white transition-colors">
-              Voltar ao Início
-            </Link>
+            <h2 className="text-2xl font-bold tracking-tight">Outros Projetos</h2>
           </div>
-          <Separator className="mb-8 bg-gray-800" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {outrosProjetos.map((p) => (
               <ProjectCard
                 key={p.slug}
