@@ -69,7 +69,7 @@ export default function Projeto() {
               />
             </div>
 
-            <div className="prose prose-invert prose-zinc max-w-none">
+            <div className="markdown-content max-w-none">
               <ReactMarkdown>{projeto.content}</ReactMarkdown>
             </div>
           </div>
